@@ -1,8 +1,8 @@
 {
-  "name": "ai-music-assistant",
+  "name": "codio-ai-radio",
   "version": "1.0.0",
   "private": true,
-  "description": "中文本地优先 AI 音乐播放器，融合播放器、AI DJ、偏好记忆、天气和定时音乐。",
+  "description": "中文本地优先 AI 电台，融合播放器、AI DJ、偏好记忆、天气和定时音乐。",
   "type": "module",
   "main": "server/index.js",
   "scripts": {
