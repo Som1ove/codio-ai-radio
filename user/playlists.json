@@ -1,0 +1,13 @@
+{
+  "sources": [
+    {
+      "type": "spotify",
+      "id": "1irdLw7wwOWOPBRkZd3B7q",
+      "url": "https://open.spotify.com/playlist/1irdLw7wwOWOPBRkZd3B7q",
+      "status": "pending-import"
+    }
+  ],
+  "lateNight": ["毛不易", "陈绮贞", "告五人", "落日飞车"],
+  "focus": ["ambient", "lofi", "piano"],
+  "comfort": ["华语民谣", "indie pop", "acoustic"]
+}

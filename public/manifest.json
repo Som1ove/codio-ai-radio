@@ -1,0 +1,15 @@
+{
+  "name": "Codio AI 电台",
+  "short_name": "Codio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09070e",
+  "theme_color": "#9b7cff",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

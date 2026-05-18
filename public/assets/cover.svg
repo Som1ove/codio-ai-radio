@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop stop-color="#77e2bf"/>
+      <stop offset=".55" stop-color="#24305f"/>
+      <stop offset="1" stop-color="#08090d"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="800" fill="url(#g)"/>
+  <circle cx="592" cy="188" r="132" fill="#f6c76f" opacity=".82"/>
+  <path d="M120 560c126-138 245-138 358 0s208 138 286 0v160H120z" fill="#08090d" opacity=".78"/>
+  <text x="70" y="125" fill="#f4f5f8" font-family="Arial, sans-serif" font-size="54" font-weight="800">Midnight Signal</text>
+  <text x="72" y="184" fill="#d7dcea" font-family="Arial, sans-serif" font-size="28">Codio AI Radio</text>
+</svg>

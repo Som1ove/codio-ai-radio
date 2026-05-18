@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800">
+  <rect width="800" height="800" fill="#08090d"/>
+  <path d="M170 710V170h118v540M342 710V90h118v620M514 710V250h118v460" fill="#171b25"/>
+  <path d="M170 170h118M342 90h118M514 250h118" stroke="#77e2bf" stroke-width="18"/>
+  <circle cx="620" cy="132" r="74" fill="#ff7a90"/>
+  <text x="74" y="92" fill="#f4f5f8" font-family="Arial, sans-serif" font-size="50" font-weight="800">Glass Elevator</text>
+</svg>

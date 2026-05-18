@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#07070c">
+    <title>Codio AI 电台</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="station-shell">
+      <section class="station-panel">
+        <header class="station-top">
+          <div class="brand">
+            <strong>Codio</strong>
+          </div>
+          <div class="top-actions">
+            <button class="ghost-btn" id="spotifyLoginBtn" type="button">LOGIN</button>
+            <button class="ghost-btn" id="profileBtn" type="button">PROFILE</button>
+            <button class="ghost-btn" id="cardModeBtn" type="button" aria-pressed="false">CARD</button>
+            <div class="theme-toggle" aria-label="主题">
+              <button class="selected" id="darkModeBtn" type="button">DARK</button>
+              <button id="lightModeBtn" type="button">LIGHT</button>
+            </div>
+          </div>
+        </header>
+
+        <section class="clock-stage" aria-label="当前电台时间">
+          <div class="clock-time" id="clockTime">11:14</div>
+          <div class="clock-day" id="clockDay">Sunday</div>
+          <div class="clock-date" id="clockDate">12 APR 2026</div>
+          <div class="on-air"><span></span> ON AIR</div>
+          <div class="broadcast-card">
+            <div class="signal-stack" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div>
+              <p id="episodeMood">PRIVATE RADIO</p>
+              <strong id="episodeTitle">Today’s Codio FM</strong>
+              <small id="episodeCaption">curated by weather, calendar, taste and time</small>
+            </div>
+          </div>
+          <div class="station-gates">
+            <button id="enterRadioBtn" type="button">ENTER RADIO →</button>
+          </div>
+        </section>
+
+        <section class="player-card">
+          <audio id="audio" preload="metadata"></audio>
+          <div class="now-row">
+            <div class="bars" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+            <div class="cover" id="coverArt"><span>♪</span></div>
+            <div class="track-meta">
+              <h1 id="songTitle">等待 Codio 开场</h1>
+              <p id="songArtist">AI RADIO</p>
+            </div>
+            <div class="control-row">
+              <button class="round-btn" id="previousBtn" type="button" aria-label="上一首">‹</button>
+              <button class="round-btn primary" id="playPauseBtn" type="button" aria-label="播放">▶</button>
+              <button class="round-btn" id="nextBtn" type="button" aria-label="下一首">›</button>
+            </div>
+            <div class="taste-actions">
+              <button class="round-btn like-btn" id="likeBtn" type="button" aria-label="喜欢">♡</button>
+              <button class="round-btn dislike-btn" id="dislikeBtn" type="button" aria-label="不喜欢">×</button>
+            </div>
+            <button class="hide-btn" id="hostNowBtn" type="button">HOST</button>
+            <div class="volume-row">
+              <span>VOL</span>
+              <input id="volume" type="range" min="0" max="100" value="82" aria-label="音量">
+            </div>
+          </div>
+
+          <div class="time-row">
+            <span id="elapsed">0:00</span>
+            <input id="progress" type="range" min="0" max="100" value="0" aria-label="播放进度">
+            <span id="duration">0:00</span>
+          </div>
+        </section>
+
+        <section class="queue-panel">
+          <div class="section-title">
+            <span>QUEUE</span>
+            <button class="mini-action" id="refreshQueueBtn" type="button">REFRESH</button>
+          </div>
+          <div id="queue" class="queue empty">暂无队列</div>
+        </section>
+
+        <section class="host-panel">
+          <div class="host-head">
+            <span class="status-light"></span>
+            <strong>Codio</strong>
+            <div class="status" id="socketStatus">未连接</div>
+          </div>
+
+          <p class="host-blurb" id="aiBlurb">Codio 会根据天气、日程和你的品味，提前安排今天的电台。</p>
+
+          <div id="chatLog" class="chat-log">
+            <article class="bubble nora">
+              <button class="bubble-icon" type="button" aria-label="打开 Codio profile">
+                <img src="/assets/codio-avatar.jpeg" alt="">
+              </button>
+              <div>
+                <time>Codio • 0:00</time>
+                <p>嗨，我是 Codio，你的 24 小时 AI 电台主播。</p>
+                <p>我会像策展一样安排今天的音乐，也会自己判断什么时候该说点话。</p>
+              </div>
+            </article>
+            <article class="bubble nora ghost-line">
+              <button class="bubble-icon" type="button" aria-label="打开 Codio profile">
+                <img src="/assets/codio-avatar.jpeg" alt="">
+              </button>
+              <div>
+                <time>signal • live</time>
+                <p>Waiting for the next segment cue.</p>
+              </div>
+            </article>
+          </div>
+
+          <form class="chat-input" id="commandForm">
+            <input id="commandInput" autocomplete="off" placeholder="跟 Codio 说点什么">
+            <button type="submit" aria-label="发送">↑</button>
+          </form>
+        </section>
+
+        <footer class="station-footer">
+          <span>CODIO FM</span>
+          <span id="sourceStatus">检测中</span>
+          <span id="neteaseStatus">网易云检测中</span>
+          <span id="weather">天气加载中</span>
+          <span><b id="plays">0</b> PLAYS</span>
+          <span><b id="schedules">0</b> PLANS</span>
+          <span id="memory">已就绪</span>
+        </footer>
+
+        <form id="settingsForm" class="settings-form" aria-hidden="true">
+          <select name="musicSource">
+            <option value="auto">自动</option>
+            <option value="netease">网易云</option>
+            <option value="spotify">Spotify</option>
+            <option value="demo">Demo</option>
+          </select>
+          <input name="city" placeholder="北京 / Shanghai / New York">
+          <input name="favoriteGenres" placeholder="华语民谣, City Pop, Ambient">
+          <input name="favoriteArtists" placeholder="毛不易, 陈绮贞">
+          <input name="avoidGenres" placeholder="太吵, 过亮高频">
+          <input name="voiceEnabled" type="checkbox" checked>
+          <button type="submit">保存偏好</button>
+        </form>
+
+        <section class="profile-overlay" id="profileOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="profileName">
+          <article class="profile-card" aria-label="Codio profile">
+            <button class="profile-back" id="profileBackBtn" type="button">← 返回主页</button>
+            <button class="profile-close" id="profileCloseBtn" type="button" aria-label="关闭">×</button>
+            <div class="profile-head">
+              <div class="profile-avatar" id="profileAvatar"></div>
+              <div>
+                <h2 id="profileName">Codio</h2>
+                <p id="profileStatus">一开机我就打碟</p>
+              </div>
+            </div>
+            <div class="profile-bio" id="profileBio"></div>
+            <div class="profile-stats">
+              <div><span>ON AIR</span><strong id="profileOnAir">24/7</strong></div>
+              <div><span>GENRES</span><strong id="profileGenres">0</strong></div>
+              <div><span>LISTENER</span><strong id="profileListener">1</strong></div>
+            </div>
+            <div class="profile-tags" id="profileTags"></div>
+            <div class="profile-section">
+              <span>RECENT TASTE</span>
+              <div id="profileArtists" class="profile-list"></div>
+            </div>
+            <div class="profile-section">
+              <span>RECENT TRACKS</span>
+              <div id="profileSongs" class="profile-list"></div>
+            </div>
+            <footer>CODIO × SOM1OVE</footer>
+          </article>
+        </section>
+      </section>
+    </main>
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
