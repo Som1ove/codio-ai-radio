@@ -6,3 +6,4 @@ node_modules/
 .npm-cache/
 user/imports/
 user/playlists.json
+user/taste.md
