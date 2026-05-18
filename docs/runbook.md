@@ -20,7 +20,7 @@ PORT=8081 npm start
 - `.env` for credentials and provider choices
 - `data/state.db` for local state
 - `data/spotify-token.json` after Spotify login
-- `user/imports/*.json` for imported taste
+- `user/imports/*.json` for imported taste, kept local and ignored by Git
 
 Do not commit `.env`, `data/state.db`, `data/spotify-token.json` or user-specific secret material.
 
@@ -46,7 +46,7 @@ Do not commit `.env`, `data/state.db`, `data/spotify-token.json` or user-specifi
 | `FEISHU_USER_ACCESS_TOKEN` | Feishu user token for calendar reads |
 | `FEISHU_CALENDAR_ID` | Calendar id, default `primary` |
 | `OPENWEATHER_API_KEY` | Optional OpenWeather key |
-| `WEATHER_CITY` | Weather city, default can be `Orlando` |
+| `WEATHER_CITY` | Optional weather city override |
 | `WEATHER_UNITS` | `metric` or `imperial` |
 
 ## Spotify Playback Checklist
