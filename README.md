@@ -51,7 +51,7 @@ TTS_PROVIDER=auto
 XIAOMI_TTS_API_KEY=
 FISH_AUDIO_API_KEY=
 OPENWEATHER_API_KEY=
-WEATHER_CITY=Orlando
+WEATHER_CITY=
 ```
 
 不要把 `.env`、`data/spotify-token.json` 或任何 API key 提交到仓库。
@@ -77,7 +77,7 @@ npm run import:spotify -- https://open.spotify.com/playlist/<playlist_id>
 npm run import:spotify-library -- "/path/to/My Spotify Library.csv"
 ```
 
-导入结果写入 `user/imports/`，`server/context.js` 和 `server/taste.js` 会把这些数据作为长期品味样本。
+导入结果写入本地 `user/imports/`，`server/context.js` 和 `server/taste.js` 会把这些数据作为长期品味样本。这个目录包含个人听歌数据，默认不提交到 GitHub。
 
 ## 常用脚本
 
