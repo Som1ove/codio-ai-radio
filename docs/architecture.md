@@ -86,7 +86,7 @@ Important playback behavior:
 - `plans`
 - `schedules`
 
-Imported Spotify taste data lives in `user/imports/` and is read by `server/context.js` and `server/taste.js`.
+Imported Spotify taste data lives in local-only files: `user/taste.md`, `user/playlists.json` and `user/imports/`. They are read by `server/context.js` and `server/taste.js`, but are ignored by Git because they contain private listening data.
 
 ## Music Source Strategy
 
