@@ -1,0 +1,23 @@
+{
+  "name": "ai-music-assistant",
+  "version": "1.0.0",
+  "private": true,
+  "description": "中文本地优先 AI 音乐播放器，融合播放器、AI DJ、偏好记忆、天气和定时音乐。",
+  "type": "module",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js",
+    "netease": "HOST=127.0.0.1 PORT=3003 node node_modules/NeteaseCloudMusicApi/app.js",
+    "import:spotify": "node scripts/import-spotify-playlist.js",
+    "import:spotify-library": "node scripts/import-spotify-library-csv.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "NeteaseCloudMusicApi": "^4.31.0",
+    "ws": "^8.17.0"
+  }
+}
