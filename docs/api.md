@@ -23,7 +23,7 @@ Returns profile card data derived from imported taste, recent plays, likes and p
 Body:
 
 ```json
-{ "preferences": { "musicSource": "spotify", "city": "Orlando" } }
+{ "preferences": { "musicSource": "spotify", "city": "New York" } }
 ```
 
 Updates preference fields.
