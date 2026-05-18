@@ -5,3 +5,4 @@ cache/
 node_modules/
 .npm-cache/
 user/imports/
+user/playlists.json
