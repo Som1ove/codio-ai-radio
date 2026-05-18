@@ -6,6 +6,7 @@
 - 主服务入口是 `server/index.js`；不要改回根目录旧 `server.js` 作为运行入口。
 - 真实状态写入 `data/state.db`，它是 JSON 文件，不是 SQLite。不要把密钥、token 或播放历史提交到仓库。
 - `.env` 只在本地使用；文档只写变量名，不写用户实际 key。
+- `user/taste.md`、`user/playlists.json`、`user/imports/` 都是用户私人品味数据，只能留在本地，不要提交到 GitHub。
 
 ## 关键模块
 
@@ -17,6 +18,13 @@
 - `server/spotifyAuth.js`：Spotify PKCE 登录、token 持久化和 Web Playback SDK 播放控制。
 - `server/tts.js`：小米 MiMo、Fish Audio、浏览器语音 fallback。
 - `server/state.js`：messages、plays、likes、dislikes、plans、preferences、schedules。
+
+## 私人文件
+
+- `user/taste.md`：用户品味画像和导入摘要。
+- `user/playlists.json`：用户私人歌单源。
+- `user/imports/*.json`：Spotify/CSV 导入后的完整样本。
+- 这些文件在 `.gitignore` 中；公开文档只能说明用途，不能写具体歌单链接、歌单名、常听艺人统计或本地绝对路径。
 
 ## 播放规则
 
